@@ -1,6 +1,8 @@
-feature 'Ask for name' do
-  scenario 'user is asked for name' do
+feature 'Submit name' do
+  scenario 'user puts name' do
     visit('/')
-    expect(page).to have_content ('What is your name?')
+    fill_in :name, with: 'Yadira'
+    click_button 'Submit'
+    expect(page).to have_content 'Yadira'
   end
 end

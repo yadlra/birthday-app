@@ -2,8 +2,13 @@ require 'sinatra/base'
 
 class BirthdayApp < Sinatra::Base
   get '/' do
-    'Hey there!'
-    # 'What is your name?'
+    # 'Hey there!\n What is your name?'
+    erb :index
+  end
+
+  post '/name' do
+    @name = params[:name]
+    erb :interact
   end
 
 
